@@ -1,0 +1,1 @@
+rubisco	1	1263	forward	COG1850	 770

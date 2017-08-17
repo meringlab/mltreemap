@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="191"
+   name=""
+   committed-date="2007-02-01T11:45:04.399903Z"
+   url="https://svn2.hosted-projects.com/string_hosted/string/treemap/css"
+   last-author="mering"
+   kind="dir"
+   uuid="31979071-ff14-0410-a5ed-b53ce545f8e5"
+   repos="https://svn2.hosted-projects.com/string_hosted/string"
+   revision="404"/>
+<entry
+   committed-rev="191"
+   name="treemap_standard_styles.v7234.css"
+   text-time="2007-11-28T11:03:35.000000Z"
+   committed-date="2007-02-01T11:45:04.399903Z"
+   checksum="8cae7b614bf807ca8433d591ba8dbccb"
+   last-author="mering"
+   kind="file"
+   prop-time="2007-11-28T11:03:35.000000Z"/>
+</wc-entries>

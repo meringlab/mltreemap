@@ -1,0 +1,5 @@
+data/userdata/*
+data/userparams/usersettings*
+
+*~
+.DS_Store

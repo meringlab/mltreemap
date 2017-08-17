@@ -1,0 +1,107 @@
+<h1>MLTreeMap Documentation</h1>
+<p>
+MLTreeMap analyzes DNA sequences and determines their most likely phylogenetic origin. 
+Its main use is in metagenomics projects, where DNA is isolated directly from natural environments and sequenced (the 
+organisms from which the DNA originates are often entirely undescribed). 
+MLTreeMap will search such sequences for suitable marker genes, and will use maximum likelihood analysis to place them in 
+the 'Tree of Life'. This placement is more reliable than simply assessing the closest relative of a sequence using BLAST. 
+More importantly, MLTreeMap decides not only who is the closest relative of your query sequence, but also how deep in the tree 
+of life it probably branched off.
+<br/>Additionally, MLTreeMap searches the sequences for genes, which are coding for key enzymes of important functional pathways, 
+such as RuBisCo, methane monooxygenase or nitrogenase. In case of a positive hit, MLTreeMap uses maximum likelihood analysis to place them 
+in the respective 'gene-family tree'.
+</p>
+<h2>Phylogenetic markers</h2>
+<p>A set of 40 protein-coding, universally occurring 
+<a class='normal_reference' href='/treemap_html/marker_genes.txt'>marker genes</a> 
+is used to phylogenetically assess environmental sequencing data. This set of genes has been described previously 
+[<a class='normal_reference' href='http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&amp;cmd=Retrieve&amp;dopt=Abstract&amp;list_uids=16513982'>ref</a>], 
+and has been chosen based on systematic searches of fully sequenced genomes: the genes were required to be universally 
+present in all genomes known to date (including archaea and eukaryotes), and were selected such that the average number 
+of paralogous copies in each genome was as low as possible. The rationale behind this choice is that 
+such genes are apparently under strong selection against both gene loss, and against copy number variations. This should make 
+them least likely to tolerate horizontal gene transfer (since horizontal transfers presumably entail episodes of either 
+gene-absence or multiple gene copies); such genes should therefore be most likely to represent species phylogeny. 
+Some remaining cases of horizontal transfer have been detected manually; these have been neutralized by artificially 
+pruning marker genes from the putative acceptor organisms (such that in these organisms, these genes are considered 
+'missing data' in subsequent analyses 
+[<a class='normal_reference' href='http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&amp;cmd=Retrieve&amp;dopt=Abstract&amp;list_uids=16513982'>ref</a>]. 
+Likewise, paralogs and additional gene copies derived from organelles were removed, until each gene family was 
+represented by no more than a single, full-length sequence in each reference organism.
+<br/>In addition to the phylogenetic analysis described above, MLTreeMap does a second one, which relies on 16s and 18s rRNA sequences.
+</p>
+<h2>Functional markers</h2>
+<p>The following gene families have been chosen to assess functional properties of environmental communities, due to the role of their gene products as key enzymes in the respecive metabolic pathways: 
+<a class='normal_reference' href='http://www.ncbi.nlm.nih.gov/pubmed/15950120'>RuBisCO</a> 
+(<a class='normal_reference' href='http://string-db.org/newstring_cgi/show_network_section.pl?targetmode=cogs&amp;identifier= COG1850'>COG1850</a>) 
+is the key enzyme of the Calvin cycle and thus essential for photosynthetic activity. 
+<a class='normal_reference' href='http://pubs.acs.org/doi/abs/10.1021/bi0497603'>Methane monooxygenase</a> 
+(sequences obtained from the <a class='normal_reference' href='http://fungene.cme.msu.edu/'>FunGene database</a>) 
+is essential for methane fixation. 
+<a class='normal_reference' href='http://www.ncbi.nlm.nih.gov/pubmed/18973625'>HZO and HOA</a> belong to the key enzymes of the nitrification reaction. 
+<a class='normal_reference' href='http://www.ncbi.nlm.nih.gov/pubmed/14694078'>Nitrogenase</a> 
+(nifD: <a class='normal_reference' href='http://www.genome.jp/dbget-bin/www_bget?ko+K02586'>K02586</a>, 
+nifH: <a class='normal_reference' href='http://www.genome.jp/dbget-bin/www_bget?ko+K02588'>K02588</a>) 
+is essential for nitrogen fixation. The <a class='normal_reference' href='http://www.ncbi.nlm.nih.gov/pubmed/18826437'>dsrAB</a>  gene is a marker for sulfur-oxidizing and sulfate-reducing prokaryotes. <a class='normal_reference' href='http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1175950/'>Cryptochromes and photolyases</a> are a family of photoreceptors and DNA repair encymes respectively and have been used to detect functional novelty by  <a class='normal_reference' href='http://jb.asm.org/cgi/content/full/191/1/32'>Singh et al. 2009</a>.
+
+</p>
+
+<h2>Detection of marker genes</h2>
+<p>Marker genes are detected within your input query sequence using 
+<a class='normal_reference' href='http://www.ncbi.nlm.nih.gov/BLAST/'>BLAST</a>, by searching the 
+DNA against clusters of orthologous groups (COGs). These COGS are maintained at the extended COG database on the STRING server 
+[<a class='normal_reference' href='http://www.ncbi.nlm.nih.gov/pubmed/18940858?ordinalpos=1&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DefaultReportPanel.Pubmed_RVDocSum'>ref</a>] 
+for all marker genes except the methane monooxygenase and the nitrogenase genes where the COGs have been derived from the KEGG database 
+[<a class='normal_reference' href='http://www.ncbi.nlm.nih.gov/pubmed/16381885?ordinalpos=2&amp;itool=EntrezSystem2.PEntrez.Pubmed.Pubmed_ResultsPanel.Pubmed_DefaultReportPanel.Pubmed_RVDocSum'>ref</a>]. 
+COG-matches are called, for any sequence section whose first hit is a protein already assigned to a COG, 
+as long as the BLAST score is better than 60 bits (multiple COG-mappings are allowed, unless they overlap by more 
+than 50% of the length of the shorter assignment). Each open reading frame which is found to map to one of the 
+marker gene COGs is then re-aligned to all members of that COG using 
+<a class='normal_reference' href='http://hmmer.janelia.org/'>HMMALIGN</a>. 
+In cases where a single DNA fragment maps to more than one marker gene, the alignments are concatenated. 
+Finally, gaps in the alignments are removed using GBLOCKS, with the following settings: 
+Maximum Number Of Contiguous Nonconserved Positions: 15; Minimum Length Of A Block: 3; 
+Allowed Gap Positions: with half; Minimum Number Of Sequences For A Flank Position: 55% of the Sequences.
+</p>
+<h2>Maximum likelihood scoring</h2>
+<p>After the above step, each query DNA fragment with at least one marker gene is represented by a 
+multiple sequence alignment (this alignment contains the known sequences from this marker gene family, 
+plus a single stretch of novel sequence). For all the known sequences in the alignment, 
+their phylogenetic relations are assumed to be that of the externally provided reference phylogeny of complete genomes 
+[<a class='normal_reference' href='http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&amp;cmd=Retrieve&amp;dopt=Abstract&amp;list_uids=16513982'>ref</a>]
+ or the one of the GEBA phylogeny [<a class='normal_reference' href='http://www.ncbi.nlm.nih.gov/pubmed/20033048'>ref</a>].
+ The novel sequence (your query) could in principle be branching anywhere in that tree. 
+ The possible branching positions effectively define an ensemble of trees, which are all 
+ identical except for the position of the query sequence. We analyze these ensembles using 
+<a class='normal_reference' href='http://icwww.epfl.ch/~stamatak/index-Dateien/Page443.htm'>RAxML</a>, in the context 
+of the above alignment, employing the same maximum likelihood model (and settings) as were used 
+to generate the reference phylogeny itself. This procedure results in a maximum likelihood score 
+for each tree in the ensemble, and the most likely tree then defines the most probable placement of the query sequence.
+</p>
+<p>Often, however, more than one placement in the reference tree is possible, and these can be almost equally likely - 
+especially in the case of short (or partial) query sequences, which may not contain enough phylogenetic information. 
+We employ two measures here to avoid unjustified precision when assigning such sequences: 
+firstly, we require a minimum length of informative sequence in each query: this cut-off is set at 80 columns of 
+blocked alignment (shorter queries are not considered). Secondly, we assign queries to more than one position 
+in the reference tree if necessary (giving them a fractional weight at each position). 
+To do this, we use bootstrap values calculated by 
+<a class='normal_reference' href='http://icwww.epfl.ch/~stamatak/index-Dateien/Page443.htm'>RAxML</a>.
+</p>
+<p>The final result of the above step is a likely placement of the query sequence in the reference tree 
+(broken down into a weighted distribution of placements if necessary). Note that the branching pattern 
+of the reference phylogeny itself is never altered - only the novel sequence is assessed, relative to the 
+fixed reference phylogeny. 
+</p>
+<h2>Visualization</h2>
+<p>In the last step, we visualize the placement of the query sequence in the context of the reference tree 
+(using in-house tree drawing software). The position of the blue bubble in the tree illustrates the most likely 
+branching position of the unknown environmental organism from which your DNA presumably originated. If several bubbles 
+are visible, then the placement was not possible with 100% confidence. In that case, the relative sizes of the bubbles show the 
+relative weights of the placements. The placements are additionally 'projected' onto the reference taxa 
+(as bar-charts, merely for illustration): each placement is distributed among the reference taxa which are 
+descendents of the placements' branching position, dividing the weight evenly at each bifurcation in the 
+tree while proceeding from the actual placement up to the tips of the tree.
+</p>
+<h2>Contact</h2>
+<p>In case you have any further questions, comments or suggestions, please email the authors: 
+<a class='normal_reference' href='mailto:mering@imls.uzh.ch'>mering[at]imls.uzh.ch</a>.</p>

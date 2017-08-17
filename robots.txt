@@ -1,0 +1,12 @@
+User-agent: msnbot
+Disallow: /treemap_cgi/
+Disallow: /treemap_cgi/*
+Disallow: /treemap_cgi
+User-agent: *
+Disallow: /*taskId=*
+Disallow: /*sessionId=*
+Disallow: /*UserId=*
+Disallow: /treemap_cgi/show_submitted_jobs.pl
+Disallow: /treemap_cgi/show_download_page.pl
+Disallow: /treemap_cgi/show_documentation_page.pl
+Disallow: /download

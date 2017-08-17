@@ -1,0 +1,74 @@
+
+
+IMPORTANT WARNING: Sequences 1 and 67 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 1 and 70 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 1 and 74 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 1 and 77 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 8 and 10 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 8 and 37 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 13 and 22 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 18 and 19 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 58 and 75 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 106 and 113 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 119 and 138 are exactly identical
+
+
+IMPORTANT WARNING: Sequences 120 and 137 are exactly identical
+
+IMPORTANT WARNING
+Found 12 sequences that are exactly identical to other sequences in the alignment.
+Normally they should be excluded from the analysis.
+
+Just in case you might need it, an alignment file with 
+sequence duplicates removed is printed to file output/various_outputs/r_rubisco.phy.reduced
+
+
+You are using RAxML version 7.1.0 released by Alexandros Stamatakis in October 2008
+
+Alignment has 343 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 0.029909
+
+RAxML classification algorithm
+
+RAxML classifier Algo: You provided a reference tree with 139 taxa; alignmnet has 140 taxa
+1 query taxa will be classifed under ML
+
+Insertion with dynamic Alignment: NO
+Writing Alignment: NO
+Thorough Br-Len Opt: YES
+BS insertions with heuristics: NO
+
+Model Optimization on reference tree: -30835.324053
+RAxML will classify 1 Sequences
+Number of Branches in Reference tree: 275
+Overall Classification time without time required for ML model parameter optimization: 11.112513
+
+
+
+Labelled reference tree including branch labels and query sequences written to file: /home/www_mering/manuels/mltreemap_neu/mltreemap_perl/output/various_outputs/RAxML_labelledTree.r_rubisco
+
+Labelled reference tree with branch labels (without query sequences) written to file: /home/www_mering/manuels/mltreemap_neu/mltreemap_perl/output/various_outputs/RAxML_originalLabelledTree.r_rubisco
+
+Classification result file written to file: /home/www_mering/manuels/mltreemap_neu/mltreemap_perl/output/various_outputs/RAxML_classification.r_rubisco
+

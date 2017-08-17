@@ -1,0 +1,3 @@
+# Functional analysis, RuBisCO:
+
+Placement weight 100%: Assignment of query to Acry 1067 (Acidiphilium cryptum) (6).

@@ -1,0 +1,231 @@
+
+BODY { margin: 20px; color: black; background-color: white; }
+
+p { font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 12px; }
+h1 { font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 18px; font-weight: bold; }
+h2 { font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 15px; font-weight: bold; }
+h3 { font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 10pt; font-weight: normal; }
+img { border-width: 0px; }
+
+pre { font-family: monospace; font-size: 11px; }
+td { font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 12px; }
+
+td.alignment { font-family: monospace; font-size: 12px; }
+td.img_compact { line-height: 0.1; font-size: 1px; }
+
+td.spacer { text-align: center; }
+
+td.treemap_menu { 
+    line-height: 0.1; font-size: 1px;
+    padding: 1px; 
+    background-image: url(/treemap_images/menubackground.png);
+    background-repeat: repeat-x;
+}
+
+li.TV_expanded { 
+    background: url(/treemap_images/triangle_down_p.gif) left center no-repeat;
+    margin-bottom: 1px; margin-top: 15px; margin-right: 5px; padding-left: 18px;
+    font-size: 12px;
+    text-align: left;
+    cursor: pointer;
+    list-style: none;
+}
+
+li.TV_collapsed { 
+    background: url(/treemap_images/triangle_right_p.gif) left center no-repeat;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 1px;
+    margin-top: 15px;
+    margin-right: 5px;
+    padding-left: 18px;
+    list-style: none;
+}
+
+div.abstract_title {
+    padding-left: 2px;
+    background-color: #e6e2e6;
+}
+
+div.abstract_linkout {
+    background-color: #e6e2e6;
+    float: right;
+}
+ 
+li.abstract_match_summary {
+    list-style: none;
+    text-align: left;
+    margin-right: 5px;
+    padding-left: 20px;
+}
+
+li.abstract_body {
+    list-style: none;
+    text-align: justify;
+    margin-right: 5px;
+    padding-left: 20px;
+}       
+
+span.abbreviation_dots {
+  cursor: pointer;
+}
+
+.treemap_example { color:black; font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 10px; }
+.treemap_example a { color:black; text-decoration:none; }
+.treemap_example a:hover { color:blue; text-decoration:none; }
+
+a.normal_reference:link { color: black; font-family: Verdana,Helvetica,Arial,sans-serif; }
+a.normal_reference:active { color: black; font-family: Verdana,Helvetica,Arial,sans-serif; }
+a.normal_reference:visited { color: black; font-family: Verdana,Helvetica,Arial,sans-serif; }
+a.normal_reference:hover { color: blue; font-family: Verdana,Helvetica,Arial,sans-serif; }
+
+a.blacknondecorated:link { color: black; text-decoration: none; }
+a.blacknondecorated:active { color: black; text-decoration: none; }
+a.blacknondecorated:visited { color: black; text-decoration: none; }
+
+a.nondecorated:link { color: black; text-decoration: none; }
+a.nondecorated:active { color: black; text-decoration: none; }
+a.nondecorated:visited { color: black; text-decoration: none; }
+a.nondecorated:hover { color: blue; text-decoration: none; }
+
+a.hint_for_help:link { color: black; text-decoration: none; }
+a.hint_for_help:active { color: black; text-decoration: none; }
+a.hint_for_help:visited { color: black; text-decoration: none; }
+a.hint_for_help:hover { color: blue; text-decoration: none; }
+
+a.download_file:link { color: black; }
+a.download_file:active { color: black; }
+a.download_file:visited { color: black; }
+a.download_file:hover { color: blue; }
+
+.treemapSubmitButton {
+    font-family: Verdana,Arial,sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    background-color: #e6e2e6;
+    background-image: url("/treemap_images/submit_button_emph.gif");
+    color: #000;
+    padding: 5px;
+    margin: 0px;
+    border-top: outset 0px #eee;
+    border-right: outset 0px #aaa;
+    border-bottom: outset 0px #aaa;
+    border-left: outset 0px #eee;
+}
+
+.treemapResetButton {
+    font-family: Verdana,Arial,sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    background-color: #e6e2e6;
+    background-image: url("/treemap_images/normal_button_grey.gif");
+    color: #000;
+    padding: 5px;
+    margin: 0px;
+    border-top: outset 0px #eee;
+    border-right: outset 0px #aaa;
+    border-bottom: outset 0px #aaa;
+    border-left: outset 0px #eee;
+}
+
+.treemapTasksButton {
+    font-family: Verdana,Arial,sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    background-color: #e6e2e6;
+    background-image: url("/treemap_images/normal_button_large_grey.gif");
+    color: #000;
+    padding: 5px;
+    margin: 0px;
+    border-top: outset 0px #eee;
+    border-right: outset 0px #aaa;
+    border-bottom: outset 0px #aaa;
+    border-left: outset 0px #eee;
+}
+
+table.dialog_box { 
+    border-style: solid; 
+    border-width: 5px; 
+    border-color: #A1ADEC; 
+}
+
+td.dialog_box_title { 
+    background-color: #A1ADEC; 
+    font-weight: bold; 
+    padding: 0px 0px 0px 4px;
+    border-style: none none solid none;
+    border-width: 5px;
+    border-color: #A1ADEC; 
+}
+
+td.info_box_title { 
+    background-color: #BBB8BC;
+    border-style: none;
+}
+
+td.result_table_header_normal {
+    white-space: nowrap;
+    padding: 4px 8px 5px 8px;
+    border-width: 0px 4px 0px 4px;
+    border-style: solid;
+    border-color: white;
+    background-color: #F6F4F6;
+    text-align: left;
+}
+
+td.result_table_header_selected {
+    white-space: nowrap;
+    padding: 4px 8px 5px 8px;
+    border-width: 0px 4px 0px 4px;
+    border-style: solid;
+    border-color: white;
+    background-color: #BBB8BC;
+    text-align: left;
+}
+
+td.result_table_header_inactive {
+    white-space: nowrap;
+    padding: 4px 8px 5px 8px;
+    border-width: 0px 4px 0px 4px;
+    border-style: solid;
+    border-color: white;
+    background-color: #E6E2E6;
+    text-align: left;
+    color: #555555;
+}
+
+td.result_table_body {
+    border-width: 7px;
+    border-style: solid;
+    border-color: #BBB8BC;
+    padding: 10px;
+}
+
+td.dialog_content {
+    background-color: white;
+    padding: 5px;
+}
+
+td.tab { text-align: center; font-size: 10px; cursor: pointer; }
+td.tab_selected { text-align: center; font-size: 10px; cursor: default; }
+
+td.tab a { font-family: Verdana,Helvetica,Arial,sans-serif; color: black; text-decoration: none; cursor: pointer; }
+td.tab_selected a { font-family: Verdana,Helvetica,Arial,sans-serif; color: black; text-decoration: none; cursor: default; }
+td.tab a:focus, td.tab_selected a:focus { outline-style: none; color: black; }
+
+td.tab_base { vertical-align: bottom; }
+div.tab_base_bottom { background: url("/treemap_images/result_box/tabbase.bottom.png") right bottom; }
+div.tab_base_left { background: url("/treemap_images/result_box/tabbase.lowerleft.png") left top; }
+div.tab_base_right { background: url("/treemap_images/result_box/tabbase.lowerright.png") no-repeat right bottom; }
+
+div.tab_ur { background: url("/treemap_images/tab.upperright.png") no-repeat right top; }
+div.tab_ul { background: url("/treemap_images/tab.upperleft.png") no-repeat left top; }
+div.tab_lr { background: url("/treemap_images/tab.lowerright.png") no-repeat right bottom; }
+div.tab_ll { background: url("/treemap_images/tab.lowerleft.png") no-repeat left bottom; padding: 2px 7px 9px 7px; }
+
+div.tab_ur_selected { background: url("/treemap_images/tabselected.upperright.png") no-repeat right top; }
+div.tab_ul_selected { background: url("/treemap_images/tabselected.upperleft.png") no-repeat left top; }
+div.tab_lr_selected { background: url("/treemap_images/tabselected.lowerright.png") no-repeat right bottom; }
+div.tab_ll_selected { background: url("/treemap_images/tabselected.lowerleft.png") no-repeat left bottom; padding: 2px 7px 9px 7px; }
+
